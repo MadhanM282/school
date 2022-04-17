@@ -10,7 +10,7 @@ const initial  = {
 
 export const Reducer = (store = initial,{type,payload})=>{
     switch(type){
-        case USERID: return{userid:payload,auth:true};
+        case USERID: return{...store,userid:payload,auth:true};
         case ADMINNAME: return{...store,name:payload};
         case SCHOOL: return{...store,School:payload};
         case CLASSES: return{...store,classes:payload};

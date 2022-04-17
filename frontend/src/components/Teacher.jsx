@@ -19,6 +19,7 @@ export const Teacher = () => {
         axios.get(`https://school-info-backend-project.herokuapp.com/teacher?count=${page}`).then(({ data }) => {
             dispatch(TeachersAction(data))
         })
+
     }, [page])
 
     if (!auth) {

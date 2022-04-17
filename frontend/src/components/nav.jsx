@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { useNavigate } from 'react-router';
 import { InputBase } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
+import {SearchAppBar} from './search'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -60,14 +61,7 @@ export default function ButtonAppBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Search>
-                        <SearchIconWrapper>
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
+                    <SearchAppBar/>
                     <IconButton
                         size="large"
                         edge="start"
