@@ -12,6 +12,8 @@ const Class = require('./controllers/ClassController')
 
 const Teacher = require('./controllers/TeacherController')
 
+const search = require('./controllers/teacherSearch')
+
 const port = process.env.PORT || 8800;
 
 const app = express();
@@ -27,6 +29,8 @@ app.post("/login", login);
 app.use("/school",School)
 
 app.use("/teacher",Teacher)
+
+app.use("/TeacherName",search)
 
 app.use("/class",Class)
 

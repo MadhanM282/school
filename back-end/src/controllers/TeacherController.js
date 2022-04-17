@@ -21,13 +21,6 @@ router.post("", async (req, res) => {
     }
 });
 
-router.get("/:TeacherName", async (req, res)=>{
-    try {
-        let teacher = await Teacher.find({TeacherName: req.params.TeacherName}).populate({path:"ClassID"}).lean().exec();
-        return res.status(200).send(teacher);
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-})
+
 
 module.exports = router;
