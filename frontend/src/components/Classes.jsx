@@ -4,9 +4,7 @@ import { Box } from "@mui/system";
 
 export const Classes = () => {
     const { classes } = useSelector((store) => store)
-    console.log('classes', classes);
-
-
+    
     return (
         <Box sx={{display:'flex',justifyContent:"space-evenly"}}>
             {classes && classes.map((item) => <Box key={item._id}>

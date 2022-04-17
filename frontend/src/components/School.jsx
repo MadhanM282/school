@@ -8,11 +8,9 @@ import { Teacher } from "./Teacher";
 
 export const Schools = () => {
     const { userId, School,auth } = useSelector((store) => store)
-    console.log('auth', auth);
  
   const navigate = useNavigate()
   if(auth===undefined){
-      console.log('auth', auth);
       <Navigate replace to="/login"/>
   }
     return (
