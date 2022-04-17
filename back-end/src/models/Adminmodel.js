@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema(
+const AdminSchema = new mongoose.Schema(
     {
         
         adminname: { type: String, required: true},
@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
 );
 
 
-userSchema.pre("save", function (next) {
+AdminSchema.pre("save", function (next) {
     if (!this.isModified("password")) return next();
 
     var hash = bcrypt.hashSync(this.password, 8);
@@ -23,11 +23,9 @@ userSchema.pre("save", function (next) {
     return next();
 });
 
-userSchema.methods.checkPassword = function (password) {
+AdminSchema.methods.checkPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
 }
 
-const User = mongoose.model("userData", userSchema);
 
-
-module.exports = mongoose.model("userData", userSchema);
+module.exports = mongoose.model("AdminData", AdminSchema);
