@@ -19,7 +19,7 @@ export const Teacher = () => {
     let size = Math.ceil(14 / 4)
     console.log('size', size);
     useEffect(() => {
-        axios.get(`https://school-info-backend-project.herokuapp.com/teacher?count=${Size}&skip=4`).then(({ data }) => {
+        axios.get(`https://school-info-backend-project.herokuapp.com/teacher?count=${Size}`).then(({ data }) => {
             console.log('teacher', data);
             dispatch(TeachersAction(data))
         })
@@ -36,8 +36,12 @@ export const Teacher = () => {
                
 
                    <Button onClick={() => {
-                    SetSize(Size+1)
-                   }}>next</Button>
+                       SetSize(Size-1)
+                    }}>Pre</Button>
+                    <Button onClick={() => {
+                     SetSize(Size+1)
+                    }}>next</Button>
+
                 
 
             </Box>
