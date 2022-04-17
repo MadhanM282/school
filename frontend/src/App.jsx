@@ -13,6 +13,7 @@ function App() {
         <Route path={"/login"} element={<Login/>} />
         <Route path={"/"} element={<Schools/>} />
         <Route path={"/class"} element={<Classes/>} />
+        
       </Routes>
       {/* <Schools/> */}
     </div>

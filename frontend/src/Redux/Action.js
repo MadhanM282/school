@@ -21,10 +21,8 @@ export const AdminLogin = (data) => (dispatch) => (
             dispatch(SchoolAction(data))
             console.log('data', data);
         })
-        axios.get(`https://school-info-backend-project.herokuapp.com/teacher`).then(({ data }) => {
-            console.log('teacher', data);
-            dispatch(TeachersAction(data))
-        })
+        
     })
 )
+
 
