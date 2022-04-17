@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get("/:_id", async (req, res) => {
     try {
-        let school = await School.find({adminId:req.params._id}).lean().exec();
+        let school = await School.find({adminId:req.params._id}).populate({path:"TeachersId",populate:{path:"ClassID"}}).lean().exec();
         return res.status(200).send(school);
     } catch (error) {
         return res.status(500).send(error.message)
